@@ -2,26 +2,18 @@ package com.tuling.circulardependencies;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.DependsOn;
-import org.springframework.context.annotation.Lazy;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
-import javax.annotation.PostConstruct;
-
 /**
- * Created by smlz on 2019/5/29.
+ * Created by xsls on 2019/5/29.
  */
 @Component
-public class InstanceA  {
+@Scope("prototype")
+public class InstanceA implements IApi {
 
-	@Autowired
+    @Autowired
     private InstanceB instanceB;
-
-    @PostConstruct
-    public void init() {
-		instanceB.setInstanceA(this);
-	}
 
     public InstanceB getInstanceB() {
         return instanceB;
@@ -40,5 +32,8 @@ public class InstanceA  {
         System.out.println("InstanceA实例化");
     }
 
-
+	@Override
+	public void say() {
+		System.out.println("I'm A");
+	}
 }

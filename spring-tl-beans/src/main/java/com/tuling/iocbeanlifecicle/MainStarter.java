@@ -13,6 +13,10 @@ public class MainStarter {
 
 		Person person = (Person) context.getBean("person");
 
+
+		//car实现了FactoryBean通过"&car" 可以拿到原始的bean
+		//Car car = (Car)context.getBean("&car");
+
 		System.out.println("person:"+person);
 	}
 }

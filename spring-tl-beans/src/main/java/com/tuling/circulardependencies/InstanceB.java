@@ -4,14 +4,14 @@ package com.tuling.circulardependencies;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import javax.annotation.PostConstruct;
-
 /**
- * Created by smlz on 2019/5/29.
+ * Created by xsls on 2019/5/29.
  */
 @Component
-public class InstanceB {
+public class InstanceB  {
 
+
+    @Autowired
     private InstanceA instanceA;
 
 
