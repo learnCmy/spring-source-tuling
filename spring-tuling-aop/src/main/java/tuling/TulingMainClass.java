@@ -1,9 +1,10 @@
 package tuling;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import tuling.Introductions.ProgramCalculate;
 
 /**
- * Created by smlz on 2019/6/10.
+ * Created by xsls on 2019/6/10.
  */
 public class TulingMainClass {
 
@@ -11,9 +12,16 @@ public class TulingMainClass {
 
     	AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(MainConfig.class);
 
-        Calculate calculate = (Calculate) ctx.getBean("calculate");
+      /**/
+        Calculate calculate = (Calculate) ctx.getBean("tulingCalculate");
+        int retVal = calculate.div(2,4);
 
-        //int retVal = calculate.mod(2,4);
-		calculate.div(6,2);
+
+         ProgramCalculate pcalculate = (ProgramCalculate) ctx.getBean("tulingCalculate");
+        System.out.println(pcalculate.toBinary(100));
+
+
+
     }
+
 }

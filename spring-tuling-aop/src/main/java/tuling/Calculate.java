@@ -2,7 +2,7 @@ package tuling;
 
 /**
  * 计算类接口
- * Created by smlz on 2019/6/10.
+ * Created by xsls on 2019/6/10.
  */
 public interface Calculate {
 
@@ -20,7 +20,7 @@ public interface Calculate {
      * @param numB
      * @return
      */
-     int reduce(int numA, int numB);
+     int sub(int numA, int numB);
 
     /**
      * 除法

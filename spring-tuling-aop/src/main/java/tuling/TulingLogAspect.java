@@ -1,18 +1,26 @@
 package tuling;
 
 import org.aspectj.lang.JoinPoint;
-import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.*;
 import org.springframework.core.annotation.Order;
+import org.springframework.stereotype.Component;
+import tuling.Introductions.ProgramCalculate;
+import tuling.Introductions.SimpleProgramCalculate;
 
 import java.util.Arrays;
 
 /**
- * Created by smlz on 2019/6/10.
+ * Created by xsls on 2019/6/10.
  */
 @Aspect
 @Order
+@Component
 public class TulingLogAspect {
+
+    /*引入:*/
+    @DeclareParents(value="tuling.TulingCalculate",   // 动态实现的类
+            defaultImpl = SimpleProgramCalculate.class)  // 引入的接口的默认实现
+    public static ProgramCalculate programCalculate;    // 引入的接口
 
     @Pointcut("execution(* tuling.TulingCalculate.*(..))")
     public void pointCut(){};

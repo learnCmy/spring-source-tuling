@@ -838,13 +838,15 @@ public abstract class AbstractApplicationContext extends DefaultResourceLoader
 		}
 
 		//获取bean定义中的监听器对象
+		//接口方式的监听就是这里注册 把beanName注册进去
+		// 还有一个地方（ApplicationListenerDetector后置处理器那会注册Bean,为了防止懒加载的监听器）
 		String[] listenerBeanNames = getBeanNamesForType(ApplicationListener.class, true, false);
 		//把监听器的名称注册到我们的多播器上
 		for (String listenerBeanName : listenerBeanNames) {
 			getApplicationEventMulticaster().addApplicationListenerBean(listenerBeanName);
 		}
 
-		//在这里获取我们的早期事件
+		//在这里获取我们的早期事件 接口方式的监听就是在这里注册
 		Set<ApplicationEvent> earlyEventsToProcess = this.earlyApplicationEvents;
 		this.earlyApplicationEvents = null;
 		if (earlyEventsToProcess != null) {
