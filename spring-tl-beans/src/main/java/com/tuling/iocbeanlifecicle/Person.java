@@ -1,7 +1,6 @@
 package com.tuling.iocbeanlifecicle;
 
 import org.springframework.beans.factory.InitializingBean;
-import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
 
@@ -48,12 +47,12 @@ public class Person implements InitializingBean {
 	public Person() {
 		System.out.println("构造方法....");
 	}
-
-	@Override
-	public String toString() {
-		return "Person{" +
-				"name='" + name + '\'' +
-				", sex='" + sex + '\'' +
-				'}';
-	}
+//
+//	@Override
+//	public String toString() {
+//		return "Person{" +
+//				"name='" + name + '\'' +
+//				", sex='" + sex + '\'' +
+//				'}';
+//	}
 }

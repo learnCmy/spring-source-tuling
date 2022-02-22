@@ -17,7 +17,7 @@ public class ContextRefreshedEventListener{ //implements ApplicationListener<Con
         {
             System.out.println("______________\n容器加载完毕\n———————");
         }
-
+		System.out.println("嗷嗷");
     }
 
 }
