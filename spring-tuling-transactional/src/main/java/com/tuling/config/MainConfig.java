@@ -15,7 +15,8 @@ import javax.sql.DataSource;
  * Created by smlz on 2019/6/17.
  */
 @EnableTransactionManagement
-@EnableAspectJAutoProxy(exposeProxy = true)
+@EnableAspectJAutoProxy(exposeProxy = true,proxyTargetClass = true)
+//proxyTargetClass如果为ture 使用cglib代理
 @ComponentScan(basePackages = {"com.tuling"})
 public class MainConfig {
 

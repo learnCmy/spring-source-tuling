@@ -2,6 +2,7 @@ package com.tuling.service;
 
 import com.tuling.dao.AccountInfoDao;
 import com.tuling.dao.ProductInfoDao;
+import org.springframework.aop.framework.AopContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Propagation;
@@ -31,6 +32,8 @@ public class PayServiceImpl implements PayService {
             throw new RuntimeException("余额不足");
         }
 
+
+		((PayService)AopContext.currentProxy()).updateProductStore(1);
 		//this.updateProductStore(1);
 
         System.out.println(1/0);

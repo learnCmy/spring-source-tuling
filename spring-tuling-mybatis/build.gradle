@@ -6,6 +6,7 @@ apply plugin: 'java'
 sourceCompatibility = 1.8
 
 repositories {
+    mavenLocal()
     mavenCentral()
 }
 
@@ -13,8 +14,8 @@ dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
     compile("mysql:mysql-connector-java:5.1.46")
     compile("com.alibaba:druid:1.1.8")
-    compile("org.mybatis:mybatis-spring:2.0.3")
-    compile("org.mybatis:mybatis:3.5.3")
+    compile("org.mybatis:mybatis-spring:2.0.3-xsls")
+    compile("org.mybatis:mybatis:3.5.3-xsls")
     compile("org.projectlombok:lombok:1.18.4")
     compile("com.github.pagehelper:pagehelper:4.1.6")
     optional(project(":spring-context"))
